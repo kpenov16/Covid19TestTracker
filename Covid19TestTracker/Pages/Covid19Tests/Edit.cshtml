@@ -1,0 +1,21 @@
+﻿@page "{covid19TestId}"
+@model Covid19TestTracker.Pages.Covid19Tests.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editing test for @Model.Covid19Test.Patient.FirstName @Model.Covid19Test.Patient.LastName with cpr @Model.Covid19Test.Patient.CprNumber</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Covid19Test.Id" />
+    <div class="form-group">
+        <label asp-for="Covid19Test.Location"></label>
+        <input asp-for="Covid19Test.Location" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Covid19Test.Result"></label>
+        <select asp-for="Covid19Test.Result" class="form-control" asp-items="Model.Results">            
+        </select>
+    </div>
+    <button type="submit" class="btn btn-dark">Save</button>
+</form>

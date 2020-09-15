@@ -29,8 +29,11 @@
             <td>@test.Patient.CprNumber</td>
             <td>
                 <a class="btn btn-lg"
-                   asp-page="./Details" 
+                   asp-page="./Details"
                    asp-route-covid19TestId="@test.Id">Details</a>
+                <a class="btn btn-lg"
+                   asp-page="./Edit"
+                   asp-route-covid19TestId="@test.Id">Edit</a>
             </td>
         </tr>
     }
