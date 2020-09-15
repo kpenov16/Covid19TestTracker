@@ -13,9 +13,12 @@ namespace Covid19TestTracker.Pages.Covid19Tests
     {
         private readonly IConfiguration config;
         private readonly ICovid19TestData covid19TestData;
-
+        
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
         public string Msg { get; set; }
         public IEnumerable<Covid19Test> Covid19Tests { get; set; }
+        
         public ListModel(IConfiguration config, 
                          ICovid19TestData covid19TestData)
         {
@@ -23,11 +26,10 @@ namespace Covid19TestTracker.Pages.Covid19Tests
             this.covid19TestData = covid19TestData;
         }
 
-        public void OnGet(string searchTerm)
+        public void OnGet()
         {
-
             Msg = config["Msg"];
-            Covid19Tests = covid19TestData.GetTestsByCpr(searchTerm);
+            Covid19Tests = covid19TestData.GetTestsByCpr( SearchTerm );
         }
     }
 }
