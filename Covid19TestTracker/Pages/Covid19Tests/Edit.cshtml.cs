@@ -13,7 +13,8 @@ namespace Covid19TestTracker.Pages.Covid19Tests
     {
         private readonly ICovid19TestData covid19TestData;
         private readonly IHtmlHelper htmlHelper;
-
+        
+        [BindProperty]
         public Covid19Test Covid19Test { get; set; }
         public IEnumerable<SelectListItem> Results { get; set; }
         public EditModel(ICovid19TestData covid19TestData, IHtmlHelper htmlHelper)
@@ -30,6 +31,13 @@ namespace Covid19TestTracker.Pages.Covid19Tests
             {
                 return RedirectToPage("./NotFound");
             }
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            Covid19Test = covid19TestData.Update(Covid19Test);
+            covid19TestData.Commit();
             return Page();
         }
     }

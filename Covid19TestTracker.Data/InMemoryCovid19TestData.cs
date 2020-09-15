@@ -85,6 +85,8 @@ namespace Covid19TestTracker.Data
 
         }
 
+      
+
         public Covid19Test getById(string id)
         {
             return covid19Tests.SingleOrDefault(t => t.Id == id);
@@ -96,6 +98,28 @@ namespace Covid19TestTracker.Data
                    where string.IsNullOrEmpty(cprNumber) || t.Patient.CprNumber.StartsWith(cprNumber)
                    orderby t.Date
                    select t;
+        }
+
+        public Covid19Test Update(Covid19Test updatedTest)
+        {
+            var test = covid19Tests.SingleOrDefault(t => t.Id == updatedTest.Id);
+            if(test != null)
+            {
+                test.Location = updatedTest.Location;
+                test.Result = updatedTest.Result;
+                test.Date = updatedTest.Date;
+                test.Description = updatedTest.Description;
+
+                test.Patient.CprNumber = updatedTest.Patient.CprNumber;
+                test.Patient.FirstName = updatedTest.Patient.FirstName;
+                test.Patient.LastName = updatedTest.Patient.LastName;
+                test.Patient.Covid19Tests = updatedTest.Patient.Covid19Tests;
+            }
+            return test;
+        }
+        public int Commit()
+        {
+            return 0;
         }
     }
 
