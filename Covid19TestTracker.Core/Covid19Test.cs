@@ -1,4 +1,6 @@
-﻿namespace Covid19TestTracker.Core
+﻿using System.IO;
+
+namespace Covid19TestTracker.Core
 {
     public class Covid19Test
     {
@@ -7,5 +9,7 @@
         public string Location { get; set; }
         public string Date { get; set; }
         public TestResult Result { get; set; }
+
+        public Patient Patient { get; set; }
     }
 }
