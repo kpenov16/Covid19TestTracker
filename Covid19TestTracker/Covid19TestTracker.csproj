@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Covid19TestTracker.Core\Covid19TestTracker.Core.csproj" />
+    <ProjectReference Include="..\Covid19TestTracker.Data\Covid19TestTracker.Data.csproj" />
+  </ItemGroup>
+
 </Project>

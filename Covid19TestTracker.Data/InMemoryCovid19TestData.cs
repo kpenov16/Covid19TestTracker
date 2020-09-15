@@ -1,17 +1,10 @@
 ﻿using Covid19TestTracker.Core;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace Covid19TestTracker.Data
 {
-    public interface ICovid19TestData
-    {
-        IEnumerable<Covid19Test> GetAll();
-
-    }
-
     public class InMemoryCovid19TestData : ICovid19TestData
     {
 

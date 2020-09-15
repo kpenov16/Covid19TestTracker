@@ -5,4 +5,24 @@
 
 <h1>Tests</h1>
 
-@Model.Msg
+
+<table class="table">
+    @foreach (var test in Model.Covid19Tests)
+    {
+        <tr>
+            <td>@test.Date</td>
+            <td>@test.Description</td>
+            <td>@test.Location</td>
+            <td>@test.Result</td>
+            <td>@test.Patient.FirstName</td>
+            <td>@test.Patient.LastName</td>
+            <td>@test.Patient.CprNumber</td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+<div>@Model.Msg</div>
