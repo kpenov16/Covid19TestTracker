@@ -85,9 +85,10 @@ namespace Covid19TestTracker.Data
 
         }
 
-        public IEnumerable<Covid19Test> GetAll()
+        public IEnumerable<Covid19Test> GetTestsByCpr(string cprNumber = null)
         {
             return from t in covid19Tests
+                   where string.IsNullOrEmpty(cprNumber) || t.Patient.CprNumber.StartsWith(cprNumber)
                    orderby t.Date
                    select t;
         }

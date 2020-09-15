@@ -23,10 +23,11 @@ namespace Covid19TestTracker.Pages.Covid19Tests
             this.covid19TestData = covid19TestData;
         }
 
-        public void OnGet()
+        public void OnGet(string searchTerm)
         {
+
             Msg = config["Msg"];
-            Covid19Tests = covid19TestData.GetAll();
+            Covid19Tests = covid19TestData.GetTestsByCpr(searchTerm);
         }
     }
 }

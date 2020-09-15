@@ -6,7 +6,8 @@ namespace Covid19TestTracker.Core
 {
     public interface ICovid19TestData
     {
-        IEnumerable<Covid19Test> GetAll();
+        IEnumerable<Covid19Test> GetTestsByCpr(string cprNumber);
+
 
     }
 
