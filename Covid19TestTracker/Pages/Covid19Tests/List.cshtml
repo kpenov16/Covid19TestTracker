@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model Covid19TestTracker.Pages.Covid19Tests.ListModel
 @{
 }
@@ -27,6 +27,11 @@
             <td>@test.Patient.FirstName</td>
             <td>@test.Patient.LastName</td>
             <td>@test.Patient.CprNumber</td>
+            <td>
+                <a class="btn btn-lg"
+                   asp-page="./Details" 
+                   asp-route-covid19TestId="@test.Id">Details</a>
+            </td>
         </tr>
     }
 

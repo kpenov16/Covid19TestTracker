@@ -85,6 +85,11 @@ namespace Covid19TestTracker.Data
 
         }
 
+        public Covid19Test getById(string id)
+        {
+            return covid19Tests.SingleOrDefault(t => t.Id == id);
+        }
+
         public IEnumerable<Covid19Test> GetTestsByCpr(string cprNumber = null)
         {
             return from t in covid19Tests
