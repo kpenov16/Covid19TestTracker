@@ -1,0 +1,30 @@
+﻿@page
+@model Covid19TestTracker.Pages.Covid19Tests.DetailsModel
+@{
+
+}
+
+<h2>@Model.Covid19Test.Date</h2>
+<div>
+    Test Id: @Model.Covid19Test.Id
+</div>
+<div>
+    Location: @Model.Covid19Test.Location
+</div>
+<div>
+    Result: @Model.Covid19Test.Result
+</div>
+<div>
+    Description: @Model.Covid19Test.Description
+</div>
+<div>
+    Patient: @Model.Covid19Test.Patient.FirstName @Model.Covid19Test.Patient.LastName
+</div>
+<div>
+    Cpr number: @Model.Covid19Test.Patient.CprNumber
+</div>
+<div>
+    Patient Id: @Model.Covid19Test.Patient.Id
+</div>
+
+<a asp-page="./List" class="btn btn-dark">All Tests</a>
